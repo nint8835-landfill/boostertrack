@@ -28,3 +28,15 @@ type Location struct {
 	LocWaitlistUrl *string `json:"loc_waitlist_url"`
 	Address        Address `json:"address,omitempty"`
 }
+
+type LocationStatus struct {
+	Id                         int  `json:"id"`
+	HasUnavailableAppointments bool `json:"hasUnavailableAppointments"`
+}
+
+type LocationStatusResp struct {
+	Success bool             `json:"success"`
+	Data    []LocationStatus `json:"data"`
+	Message interface{}      `json:"message"`
+	Icon    interface{}      `json:"icon"`
+}
